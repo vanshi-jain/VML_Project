@@ -70,3 +70,11 @@ python run_attack.py --dataset imagenet --data ./code_changes/1/data/imagnet --a
 ## 📸 Real-World Testing
 
 Printed poster experiments were performed by generating patched images, printing them, and capturing re-scanned versions via an Intel RealSense camera. See physical_tests/ for setup instructions.
+
+## 📚 References
+
+- [Randomized Smoothing for Certified Robustness](https://arxiv.org/abs/1902.02918)
+
+- [Vision Transformers](https://arxiv.org/abs/2010.11929)
+
+- [Certified Defenses against Adversarial Patches](https://arxiv.org/abs/2003.06693)
