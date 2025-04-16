@@ -2,6 +2,8 @@
 
 This repository contains the code and experiments for the study on **certified robustness against adversarial patches**, focusing on both Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs). The project explores robustness across the entire ML lifecycle, from training to real-world testing.
 
+Check out my [blog](https://sites.google.com/view/jain-van-profile/projects/certified-ml) for a deeper understanding.
+
 ## 📌 Abstract
 
 This study primarily explores the robustness within the realm of **adversarial patches**, encompassing diverse modifications confined to a small, contiguous area. While ensuring model robustness with formal guarantees can be intriguing, the more captivating aspect lies in **verifying models throughout their entire lifecycle**, from training to deployment.
