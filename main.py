@@ -1,3 +1,9 @@
+"""
+This script is adapted from the smoothed-vit implementation:
+Salman, H., Jain, S., Wong, E., & Madry, A. (2021). 
+"Certified Patch Robustness via Smoothed Vision Transformers".
+ArXiv preprint arXiv:2110.07719.
+"""
 import argparse
 import os
 import sys
@@ -16,7 +22,7 @@ from utils.transfer_utils import get_dataset_and_loaders, freeze_model, get_mode
 from utils.custom_models.preprocess import PreProcessor
 from utils.smoothing import certify
 from utils.attackerpaper import PatchAttacker as attacker
-from data import make_train_val
+from data.data import make_train_val
 from torch.utils.data import DataLoader
 
 if int(os.environ.get("NOTEBOOK_MODE", 0)) == 1:
@@ -188,21 +194,19 @@ def args_preprocess(args):
 if __name__ == "__main__":
     args = parser.parse_args()
     args = args_preprocess(args)
-    # print("args processed ", args)
+
     # Create store and log the args
     if args.skip_store: 
         store = None
     else:
         store = cox.store.Store(args.out_dir, args.exp_name)
-        # print(store)
+
         if 'metadata' not in store.keys:
             args_dict = args.__dict__
-            # print(args_dict)
             schema = cox.store.schema_from_dict(args_dict)
             store.add_table('metadata', schema)
             store['metadata'].append_row(args_dict)
         else:
-            # print(args.__dict__)
             print('[Found existing metadata in store. Skipping this part.]')
 
         ## Save python command to a file
